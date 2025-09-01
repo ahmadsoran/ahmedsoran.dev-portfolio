@@ -1,0 +1,161 @@
+{
+  "personalInfo": {
+    "name": "Ahmed Soran",
+    "title": "Full-Stack Developer",
+    "location": "Kurdistan",
+    "tagline": "Passionate about creating innovative solutions with modern technologies",
+    "description": "Specializing in JavaScript, Node.js, Go, and both SQL and NoSQL databases.",
+    "email": "ahmed.soran@example.com",
+    "github": "https://github.com/ahmed-soran",
+    "linkedin": "https://linkedin.com/in/ahmed-soran"
+  },
+  "navigation": [
+    { "label": "About", "href": "#about" },
+    { "label": "Skills", "href": "#skills" },
+    { "label": "Projects", "href": "#projects" },
+    { "label": "Experience", "href": "#experience" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "name": "JavaScript",
+      "category": "Frontend",
+      "level": "Expert",
+      "icon": "code"
+    },
+    {
+      "id": 2,
+      "name": "Node.js",
+      "category": "Backend",
+      "level": "Expert",
+      "icon": "code"
+    },
+    {
+      "id": 3,
+      "name": "Go",
+      "category": "Backend",
+      "level": "Advanced",
+      "icon": "code"
+    },
+    {
+      "id": 4,
+      "name": "PostgreSQL",
+      "category": "Database",
+      "level": "Advanced",
+      "icon": "database"
+    },
+    {
+      "id": 5,
+      "name": "MongoDB",
+      "category": "Database",
+      "level": "Advanced",
+      "icon": "database"
+    },
+    {
+      "id": 6,
+      "name": "React",
+      "category": "Frontend",
+      "level": "Expert",
+      "icon": "code"
+    },
+    {
+      "id": 7,
+      "name": "Next.js",
+      "category": "Framework",
+      "level": "Advanced",
+      "icon": "code"
+    },
+    {
+      "id": 8,
+      "name": "TypeScript",
+      "category": "Language",
+      "level": "Advanced",
+      "icon": "code"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "CRM System",
+      "description": "A comprehensive customer relationship management system built with Node.js and React. Features include customer tracking, sales pipeline management, and analytics dashboard.",
+      "technologies": ["Node.js", "React", "MongoDB", "Express.js"],
+      "category": "Full-Stack",
+      "status": "Completed",
+      "featured": true,
+      "githubUrl": "https://github.com/ahmed-soran/crm-system",
+      "liveUrl": "https://crm-demo.example.com"
+    },
+    {
+      "id": 2,
+      "title": "ERP Solution",
+      "description": "Enterprise resource planning system for small to medium businesses. Includes inventory management, HR modules, and financial reporting.",
+      "technologies": ["Go", "PostgreSQL", "Vue.js", "Redis"],
+      "category": "Enterprise",
+      "status": "Completed",
+      "featured": true,
+      "githubUrl": "https://github.com/ahmed-soran/erp-solution",
+      "liveUrl": "https://erp-demo.example.com"
+    },
+    {
+      "id": 3,
+      "title": "Landing Page Builder",
+      "description": "Drag-and-drop landing page builder with real-time preview. Built with modern React patterns and optimized for performance.",
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma"],
+      "category": "SaaS",
+      "status": "Completed",
+      "featured": true,
+      "githubUrl": "https://github.com/ahmed-soran/landing-builder",
+      "liveUrl": "https://landing-builder.example.com"
+    },
+    {
+      "id": 4,
+      "title": "Microfrontend Platform",
+      "description": "Scalable microfrontend architecture for large applications. Implements module federation and shared component libraries.",
+      "technologies": ["React", "Webpack", "Module Federation", "TypeScript"],
+      "category": "Architecture",
+      "status": "In Progress",
+      "featured": false,
+      "githubUrl": "https://github.com/ahmed-soran/microfrontend-platform"
+    }
+  ],
+  "experience": {
+    "current": {
+      "position": "Senior Full-Stack Developer",
+      "company": "TechCorp Solutions",
+      "location": "Kurdistan",
+      "startDate": "2022-01",
+      "description": "Leading development of enterprise applications, mentoring junior developers, and architecting scalable solutions for clients across various industries.",
+      "responsibilities": [
+        "Lead a team of 5 developers in building scalable web applications",
+        "Architect and implement microservices using Node.js and Go",
+        "Mentor junior developers and conduct code reviews",
+        "Collaborate with product managers to define technical requirements",
+        "Optimize application performance and ensure high availability"
+      ],
+      "technologies": ["Node.js", "Go", "React", "PostgreSQL", "MongoDB", "AWS"]
+    },
+    "previous": [
+      {
+        "position": "Full-Stack Developer",
+        "company": "StartupXYZ",
+        "location": "Remote",
+        "startDate": "2020-06",
+        "endDate": "2021-12",
+        "description": "Developed and maintained multiple client projects using modern web technologies.",
+        "technologies": ["JavaScript", "React", "Node.js", "MySQL"]
+      }
+    ]
+  },
+  "social": {
+    "github": {
+      "url": "https://github.com/ahmed-soran",
+      "username": "ahmed-soran"
+    },
+    "linkedin": {
+      "url": "https://linkedin.com/in/ahmed-soran",
+      "username": "ahmed-soran"
+    },
+    "email": "ahmed.soran@example.com"
+  }
+}

@@ -37,7 +37,7 @@ export default function HeroSection() {
   return (
     <section
       id='about'
-      className='pt-[65px] pb-5 relative min-h-dvh flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-stone-50 dark:from-gray-900 dark:via-gray-800 dark:to-slate-900'>
+      className='pt-[80px] pb-5 relative min-h-dvh flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-stone-50 dark:from-gray-900 dark:via-gray-800 dark:to-slate-900'>
       {/* Animated Background Elements */}
       <div className='absolute inset-0 overflow-hidden'>
         <motion.div

@@ -78,11 +78,11 @@ export default function ContactSection() {
             <IconMessageCircle size={32} className='text-white' />
           </div>
           <h2 className='text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-6'>
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
           <p className='text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed'>
-            Ready to bring your ideas to life? I'm always excited to discuss new
-            opportunities and innovative projects.
+            Ready to bring your ideas to life? I&apos;m always excited to
+            discuss new opportunities and innovative projects.
           </p>
         </motion.div>
 
@@ -94,7 +94,7 @@ export default function ContactSection() {
           className='space-y-16'>
           {/* Contact Methods Grid */}
           <div className='grid md:grid-cols-3 gap-8'>
-            {contactMethods.map((method, index) => (
+            {contactMethods.map((method) => (
               <motion.div
                 key={method.label}
                 variants={itemVariants}
@@ -193,10 +193,10 @@ export default function ContactSection() {
                     Ready to Start a Project?
                   </h4>
                   <p className='text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto'>
-                    I'm passionate about creating innovative solutions and would
-                    love to hear about your project. Whether it's a web
-                    application, mobile app, or enterprise solution, let's
-                    discuss how we can bring your vision to reality.
+                    I&apos;m passionate about creating innovative solutions and
+                    would love to hear about your project. Whether it&apos;s a
+                    web application, mobile app, or enterprise solution,
+                    let&apos;s discuss how we can bring your vision to reality.
                   </p>
                 </div>
 

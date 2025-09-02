@@ -11,24 +11,10 @@ import {
   IconBrandGolang,
   IconBrandTypescript,
   IconBrandNextjs,
-  IconServer,
   IconBrandMongodb,
 } from '@tabler/icons-react'
 import data from '@/constants/data.json'
 import { fadeIn, staggerContainer, scaleIn } from '@/constants/animations'
-
-const iconMap = {
-  code: IconCode,
-  database: IconDatabase,
-  react: IconBrandReact,
-  javascript: IconBrandJavascript,
-  nodejs: IconBrandNodejs,
-  golang: IconBrandGolang,
-  typescript: IconBrandTypescript,
-  nextjs: IconBrandNextjs,
-  server: IconServer,
-  mongodb: IconBrandMongodb,
-}
 
 const getSkillIcon = (skillName: string) => {
   const name = skillName.toLowerCase().replace(/[.\s]/g, '')
@@ -68,19 +54,6 @@ const getGradientColors = (category: string) => {
       return 'from-gray-700 via-slate-700 to-stone-700'
     default:
       return 'from-gray-500 via-slate-500 to-stone-500'
-  }
-}
-
-const getSkillLevel = (level: string) => {
-  switch (level) {
-    case 'Expert':
-      return { value: 95, color: 'success' as const }
-    case 'Advanced':
-      return { value: 80, color: 'primary' as const }
-    case 'Intermediate':
-      return { value: 60, color: 'warning' as const }
-    default:
-      return { value: 40, color: 'default' as const }
   }
 }
 
@@ -143,7 +116,6 @@ export default function SkillsSection() {
                 <div className='flex flex-wrap justify-center gap-8'>
                   {skills.map((skill, index) => {
                     const IconComponent = getSkillIcon(skill.name)
-                    const skillData = getSkillLevel(skill.level)
 
                     return (
                       <motion.div

@@ -78,7 +78,7 @@ export default function HeroSection() {
               <div className='inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full border border-gray-200/50 dark:border-gray-700/50 shadow-lg'>
                 <IconSparkles size={16} className='text-gray-500' />
                 <span className='text-sm font-medium text-gray-700 dark:text-gray-300'>
-                  Hello, I'm
+                  Hello, I&apos;m
                 </span>
               </div>
             </motion.div>

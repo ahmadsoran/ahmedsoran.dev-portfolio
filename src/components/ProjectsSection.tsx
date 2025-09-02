@@ -183,8 +183,8 @@ export default function ProjectsSection() {
             </h3>
             <p className='text-gray-600 dark:text-gray-400 leading-relaxed'>
               These projects represent my experience in building scalable
-              solutions. I'm always excited to discuss new opportunities and
-              collaborations.
+              solutions. I&apos;m always excited to discuss new opportunities
+              and collaborations.
             </p>
           </div>
         </motion.div>

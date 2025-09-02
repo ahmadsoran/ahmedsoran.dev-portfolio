@@ -12,15 +12,10 @@ import { GhostPost } from '@/lib/ghost'
 
 interface BlogCardProps {
   post: GhostPost
-  index?: number
   priority?: boolean
 }
 
-export default function BlogCard({
-  post,
-  index = 0,
-  priority = false,
-}: BlogCardProps) {
+export default function BlogCard({ post, priority = false }: BlogCardProps) {
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',

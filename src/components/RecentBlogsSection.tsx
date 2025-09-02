@@ -65,7 +65,7 @@ export default function RecentBlogsSection({ posts }: RecentBlogsSectionProps) {
           className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16'>
           {posts.slice(0, 6).map((post, index) => (
             <motion.div key={post.id} variants={itemVariants}>
-              <BlogCard post={post} index={index} priority={index < 3} />
+              <BlogCard post={post} priority={index < 3} />
             </motion.div>
           ))}
         </motion.div>

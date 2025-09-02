@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import Provider from '@/components/provider'
+import StructuredData from '@/components/StructuredData'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -14,33 +15,146 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Ahmed Soran - Full-Stack Developer',
+  metadataBase: new URL('https://ahmedsoran.dev'),
+  title: 'Ahmed Soran - Full-Stack Developer | JavaScript, Node.js, Go Expert',
   description:
-    'Portfolio of Ahmed Soran, a full-stack developer from Kurdistan specializing in JavaScript, Node.js, Go, SQL/NoSQL databases. Building modern web applications with cutting-edge technologies.',
+    'Portfolio of Ahmed Soran, an experienced full-stack developer from Kurdistan specializing in JavaScript, TypeScript, Node.js, React, Next.js, Go, PostgreSQL, MongoDB. Building scalable web applications, CRM systems, ERP solutions, and enterprise-grade software.',
   keywords: [
+    // Primary keywords
     'Ahmed Soran',
     'Full-Stack Developer',
-    'JavaScript',
-    'Node.js',
-    'Go',
-    'React',
-    'Next.js',
-    'Kurdistan',
+    'Kurdistan Developer',
+    'Software Engineer',
+    'Web Developer',
+
+    // Technical skills - Languages
+    'JavaScript Developer',
+    'TypeScript Expert',
+    'Node.js Developer',
+    'Go Developer',
+    'Golang Programming',
+
+    // Frontend Technologies
+    'React Developer',
+    'Next.js Expert',
+    'Frontend Developer',
+    'React.js Specialist',
+    'Modern Web Development',
+    'Responsive Web Design',
+
+    // Backend Technologies
+    'Backend Developer',
+    'API Development',
+    'RESTful Services',
+    'Server-side Development',
+    'Node.js Backend',
+    'Go Backend Development',
+
+    // Database Skills
+    'PostgreSQL Developer',
+    'MongoDB Expert',
+    'Database Design',
+    'SQL Developer',
+    'NoSQL Database',
+    'Database Administration',
+
+    // Frameworks & Tools
+    'Express.js',
+    'Tailwind CSS',
+    'Vue.js',
+    'React TypeScript',
+    'Next.js TypeScript',
+
+    // Project Types
+    'CRM System Development',
+    'ERP Solution',
+    'Enterprise Software',
+    'SaaS Development',
+    'Landing Page Builder',
+    'Microfrontend Architecture',
+    'Module Federation',
+
+    // Professional Services
+    'Custom Software Development',
+    'Web Application Development',
+    'Full Stack Solutions',
+    'Technology Consulting',
+    'Software Architecture',
+    'Database Solutions',
+
+    // Location-based
+    'Kurdistan Software Developer',
+    'Middle East Developer',
+    'Remote Developer',
+    'Freelance Developer',
+
+    // Industry Terms
+    'Modern Tech Stack',
+    'Scalable Applications',
+    'Performance Optimization',
+    'Clean Code',
+    'Agile Development',
   ],
-  authors: [{ name: 'Ahmed Soran' }],
+  authors: [{ name: 'Ahmed Soran', url: 'https://ahmedsoran.dev' }],
   creator: 'Ahmed Soran',
+  publisher: 'Ahmed Soran',
+  category: 'Technology',
+  classification: 'Software Development',
+
+  // Enhanced Open Graph
   openGraph: {
-    title: 'Ahmed Soran - Full-Stack Developer',
+    title:
+      'Ahmed Soran - Full-Stack Developer | Expert in JavaScript, Node.js, Go',
     description:
-      'Portfolio of Ahmed Soran, a full-stack developer from Kurdistan specializing in JavaScript, Node.js, Go, SQL/NoSQL databases.',
+      'Experienced full-stack developer from Kurdistan specializing in modern web technologies. Building CRM systems, ERP solutions, and scalable applications with JavaScript, Node.js, React, Next.js, Go, and database technologies.',
     type: 'website',
     locale: 'en_US',
+    url: 'https://ahmedsoran.dev',
+    siteName: 'Ahmed Soran Portfolio',
+    images: [
+      {
+        url: '/og-image.jpg', // You'll need to create this
+        width: 1200,
+        height: 630,
+        alt: 'Ahmed Soran - Full-Stack Developer Portfolio',
+      },
+    ],
   },
+
+  // Enhanced Twitter Card
   twitter: {
     card: 'summary_large_image',
-    title: 'Ahmed Soran - Full-Stack Developer',
+    title:
+      'Ahmed Soran - Full-Stack Developer | JavaScript, Node.js, Go Expert',
     description:
-      'Portfolio of Ahmed Soran, a full-stack developer from Kurdistan specializing in JavaScript, Node.js, Go, SQL/NoSQL databases.',
+      'Experienced full-stack developer specializing in JavaScript, Node.js, React, Next.js, Go, and database technologies. Building scalable applications and enterprise solutions.',
+    images: ['/twitter-image.jpg'], // You'll need to create this
+    creator: '@ahmadsoran', // Add your Twitter handle if you have one
+    site: '@ahmadsoran',
+  },
+
+  // Additional meta tags for better SEO
+  alternates: {
+    canonical: 'https://ahmedsoran.dev',
+  },
+
+  // Robots configuration
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+
+  // Additional structured data hints
+  other: {
+    'msapplication-TileColor': '#000000',
+    'theme-color': '#000000',
   },
 }
 
@@ -51,6 +165,63 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
+      <head>
+        {/* Viewport Meta Tag */}
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+
+        {/* Charset */}
+        <meta charSet='UTF-8' />
+
+        {/* Additional SEO Meta Tags */}
+        <meta name='format-detection' content='telephone=no' />
+        <meta name='mobile-web-app-capable' content='yes' />
+        <meta name='apple-mobile-web-app-capable' content='yes' />
+        <meta
+          name='apple-mobile-web-app-status-bar-style'
+          content='black-translucent'
+        />
+
+        {/* Language and Content Type */}
+        <meta httpEquiv='Content-Language' content='en' />
+        <meta httpEquiv='Content-Type' content='text/html; charset=UTF-8' />
+
+        {/* Security Headers */}
+        <meta httpEquiv='X-Content-Type-Options' content='nosniff' />
+        <meta httpEquiv='X-Frame-Options' content='DENY' />
+        <meta httpEquiv='X-XSS-Protection' content='1; mode=block' />
+
+        {/* Preconnect to external domains for performance */}
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin='anonymous'
+        />
+
+        {/* Favicon and App Icons - You'll need to create these */}
+        <link rel='icon' href='/favicon.ico' />
+        <link
+          rel='apple-touch-icon'
+          sizes='180x180'
+          href='/apple-touch-icon.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='32x32'
+          href='/favicon-32x32.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='16x16'
+          href='/favicon-16x16.png'
+        />
+        <link rel='manifest' href='/site.webmanifest' />
+
+        {/* Structured Data */}
+        <StructuredData />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Provider>{children}</Provider>

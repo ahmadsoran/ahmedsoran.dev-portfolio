@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { getPosts } from '@/lib/ghost'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ahmadmajid.dev'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ahmedsoran.dev'
 
   try {
     const { posts } = await getPosts({ limit: 1000 })
@@ -19,7 +19,43 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         url: siteUrl,
         lastModified: new Date(),
         changeFrequency: 'weekly',
-        priority: 1,
+        priority: 1.0,
+      },
+      {
+        url: `${siteUrl}/#about`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.9,
+      },
+      {
+        url: `${siteUrl}/#skills`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.8,
+      },
+      {
+        url: `${siteUrl}/#projects`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.9,
+      },
+      {
+        url: `${siteUrl}/#experience`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.8,
+      },
+      {
+        url: `${siteUrl}/#courses`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.6,
+      },
+      {
+        url: `${siteUrl}/#contact`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.7,
       },
       {
         url: `${siteUrl}/blog`,

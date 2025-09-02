@@ -258,7 +258,7 @@ export default function ExperienceSection() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className='relative flex items-center mb-12'>
                   {/* Timeline Dot */}
-                  <div className='absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gradient-to-br from-gray-400 to-slate-400 rounded-full border-4 border-white dark:border-gray-800 shadow-lg z-10'></div>
+                  <div className='absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gradient-to-br from-gray-400 to-slate-400 rounded-full border-4 border-white dark:border-gray-800 shadow-lg'></div>
 
                   {/* Content Card - Alternating sides */}
                   <div

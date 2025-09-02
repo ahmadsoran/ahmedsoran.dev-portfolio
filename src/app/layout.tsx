@@ -113,7 +113,7 @@ export const metadata: Metadata = {
     siteName: 'Ahmed Soran Portfolio',
     images: [
       {
-        url: '/og-image.jpg', // You'll need to create this
+        url: '/ahmedweb-desktop.png',
         width: 1200,
         height: 630,
         alt: 'Ahmed Soran - Full-Stack Developer Portfolio',
@@ -128,7 +128,7 @@ export const metadata: Metadata = {
       'Ahmed Soran - Full-Stack Developer | JavaScript, Node.js, Go Expert',
     description:
       'Experienced full-stack developer specializing in JavaScript, Node.js, React, Next.js, Go, and database technologies. Building scalable applications and enterprise solutions.',
-    images: ['/twitter-image.jpg'], // You'll need to create this
+    images: ['/ahmedweb-desktop.png'],
     creator: '@ahmadsoran', // Add your Twitter handle if you have one
     site: '@ahmadsoran',
   },
@@ -198,8 +198,8 @@ export default function RootLayout({
           crossOrigin='anonymous'
         />
 
-        {/* Favicon and App Icons - You'll need to create these */}
-        <link rel='icon' href='/favicon.ico' />
+        {/* Favicon and App Icons */}
+        {/* favicon.ico is automatically handled by Next.js from app directory */}
         <link
           rel='apple-touch-icon'
           sizes='180x180'
@@ -218,6 +218,20 @@ export default function RootLayout({
           href='/favicon-16x16.png'
         />
         <link rel='manifest' href='/site.webmanifest' />
+
+        {/* Additional Android Chrome Icons for better PWA support */}
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='192x192'
+          href='/android-chrome-192x192.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='512x512'
+          href='/android-chrome-512x512.png'
+        />
 
         {/* Structured Data */}
         <StructuredData />

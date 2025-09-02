@@ -12,7 +12,7 @@ export default function StructuredData() {
         description:
           'Full-Stack Developer specializing in JavaScript, TypeScript, Node.js, React, Next.js, Go, PostgreSQL, and MongoDB',
         url: 'https://ahmedsoran.dev',
-        image: 'https://ahmedsoran.dev/ahmedsoran.jpg',
+        image: 'https://ahmedsoran.dev/ahmedweb-desktop.png',
         sameAs: [
           'https://github.com/ahmadsoran',
           'https://linkedin.com/in/ahmadsoran',

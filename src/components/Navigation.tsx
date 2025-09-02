@@ -23,6 +23,7 @@ export default function Navigation() {
     <motion.div {...fadeIn} className='fixed top-0 w-full z-50'>
       <Navbar
         onMenuOpenChange={setIsMenuOpen}
+        height={50}
         className='bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200/20'
         maxWidth='xl'>
         <NavbarContent>

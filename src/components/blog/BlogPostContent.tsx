@@ -9,8 +9,6 @@ import {
   IconClock,
   IconArrowLeft,
   IconShare,
-  IconHeart,
-  IconBookmark,
 } from '@tabler/icons-react'
 import { GhostPost } from '@/lib/ghost'
 
@@ -148,22 +146,6 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
                 className='border-gray-300 dark:border-gray-600'
                 title='Share this post'>
                 <IconShare className='w-4 h-4' />
-              </Button>
-              <Button
-                isIconOnly
-                variant='bordered'
-                size='sm'
-                className='border-gray-300 dark:border-gray-600'
-                title='Like this post'>
-                <IconHeart className='w-4 h-4' />
-              </Button>
-              <Button
-                isIconOnly
-                variant='bordered'
-                size='sm'
-                className='border-gray-300 dark:border-gray-600'
-                title='Save this post'>
-                <IconBookmark className='w-4 h-4' />
               </Button>
             </div>
           </div>

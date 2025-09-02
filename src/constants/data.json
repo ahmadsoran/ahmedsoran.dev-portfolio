@@ -97,10 +97,10 @@
     },
     {
       "id": 3,
-      "title": "Landing Page Builder",
-      "description": "Drag-and-drop landing page builder with real-time preview. Built with modern React patterns and optimized for performance.",
+      "title": "Landing Page",
+      "description": "Developed a high-performance landing page using modern React and Next.js patterns, focused on responsive design and fast load times.",
       "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma"],
-      "category": "SaaS",
+      "category": "Frontend",
       "status": "Completed",
       "featured": true
     },

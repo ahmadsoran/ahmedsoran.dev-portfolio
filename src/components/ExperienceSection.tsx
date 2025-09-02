@@ -243,8 +243,7 @@ export default function ExperienceSection() {
                     </div>
                   </div>
                   <p className='text-gray-700 z-50 dark:text-gray-300 text-sm leading-relaxed'>
-                    Leading enterprise application development and mentoring
-                    team members in modern technologies.
+                    {current.description}
                   </p>
                 </div>
               </motion.div>

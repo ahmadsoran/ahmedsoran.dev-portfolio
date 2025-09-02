@@ -11,6 +11,8 @@
   "dependencies": {
     "@heroui/react": "^2.8.3",
     "@tabler/icons-react": "^3.34.1",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tryghost/content-api": "^1.12.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",
     "next": "15.3.5",

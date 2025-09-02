@@ -5,9 +5,9 @@
     "location": "Kurdistan",
     "tagline": "Passionate about creating innovative solutions with modern technologies",
     "description": "Specializing in JavaScript, Node.js, Go, and both SQL and NoSQL databases.",
-    "email": "ahmedsorann1@gmail.com",
-    "github": "https://github.com/ahmedsoran",
-    "linkedin": "https://linkedin.com/in/ahmedsoran"
+    "email": "ahmadsorann1@gmail.com",
+    "github": "https://github.com/ahmadsoran",
+    "linkedin": "https://linkedin.com/in/ahmadsoran"
   },
   "navigation": [
     { "label": "About", "href": "/#about" },
@@ -174,13 +174,13 @@
   ],
   "social": {
     "github": {
-      "url": "https://github.com/ahmedsoran",
-      "username": "ahmedsoran"
+      "url": "https://github.com/ahmadsoran",
+      "username": "ahmadsoran"
     },
     "linkedin": {
       "url": "https://linkedin.com/in/ahmedsoran",
       "username": "ahmedsoran"
     },
-    "email": "ahmedsorann1@gmail.com"
+    "email": "ahmadsorann1@gmail.com"
   }
 }

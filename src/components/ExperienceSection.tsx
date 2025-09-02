@@ -210,10 +210,9 @@ export default function ExperienceSection() {
                 transition={{ duration: 0.6 }}
                 className='relative flex items-center mb-12'>
                 {/* Timeline Dot */}
-                <div className='absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full border-4 border-white dark:border-gray-800 shadow-lg z-10'>
+                <div className='absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full border-4 border-white dark:border-gray-800 shadow-lg'>
                   <div className='absolute inset-0 bg-green-400 rounded-full animate-ping opacity-25'></div>
                 </div>
-
                 {/* Content Card */}
                 <div className='w-full lg:w-5/12 lg:ml-auto bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-200/50 dark:border-gray-600/50'>
                   <div className='flex items-start justify-between mb-3'>
@@ -243,7 +242,7 @@ export default function ExperienceSection() {
                       <span>{current.location}</span>
                     </div>
                   </div>
-                  <p className='text-gray-700 dark:text-gray-300 text-sm leading-relaxed'>
+                  <p className='text-gray-700 z-50 dark:text-gray-300 text-sm leading-relaxed'>
                     Leading enterprise application development and mentoring
                     team members in modern technologies.
                   </p>

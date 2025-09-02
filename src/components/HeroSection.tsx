@@ -37,7 +37,7 @@ export default function HeroSection() {
   return (
     <section
       id='about'
-      className='pt-[65px] relative min-h-dvh flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-stone-50 dark:from-gray-900 dark:via-gray-800 dark:to-slate-900'>
+      className='pt-[65px] pb-5 relative min-h-dvh flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-stone-50 dark:from-gray-900 dark:via-gray-800 dark:to-slate-900'>
       {/* Animated Background Elements */}
       <div className='absolute inset-0 overflow-hidden'>
         <motion.div
@@ -135,6 +135,11 @@ export default function HeroSection() {
             className='flex flex-wrap justify-center gap-4'>
             <Button
               size='lg'
+              as={'a'}
+              href='https://drive.google.com/file/d/1-0xSTudTSsyWI1VwWwoTze6yDex7CS5Q/view'
+              download
+              target='_blank'
+              rel='noopener noreferrer'
               color='primary'
               startContent={<IconDownload size={20} />}
               className='font-semibold px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-gray-700 to-slate-700 hover:from-gray-800 hover:to-slate-800'>

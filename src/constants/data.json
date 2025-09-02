@@ -5,15 +5,16 @@
     "location": "Kurdistan",
     "tagline": "Passionate about creating innovative solutions with modern technologies",
     "description": "Specializing in JavaScript, Node.js, Go, and both SQL and NoSQL databases.",
-    "email": "ahmed.soran@example.com",
-    "github": "https://github.com/ahmed-soran",
-    "linkedin": "https://linkedin.com/in/ahmed-soran"
+    "email": "ahmedsorann1@gmail.com",
+    "github": "https://github.com/ahmedsoran",
+    "linkedin": "https://linkedin.com/in/ahmedsoran"
   },
   "navigation": [
     { "label": "About", "href": "#about" },
     { "label": "Skills", "href": "#skills" },
     { "label": "Projects", "href": "#projects" },
     { "label": "Experience", "href": "#experience" },
+    { "label": "Courses", "href": "#courses" },
     { "label": "Contact", "href": "#contact" }
   ],
   "skills": [
@@ -49,7 +50,7 @@
       "id": 5,
       "name": "MongoDB",
       "category": "Database",
-      "level": "Advanced",
+      "level": "Expert",
       "icon": "database"
     },
     {
@@ -63,14 +64,14 @@
       "id": 7,
       "name": "Next.js",
       "category": "Framework",
-      "level": "Advanced",
+      "level": "Expert",
       "icon": "code"
     },
     {
       "id": 8,
       "name": "TypeScript",
       "category": "Language",
-      "level": "Advanced",
+      "level": "Expert",
       "icon": "code"
     }
   ],
@@ -82,9 +83,7 @@
       "technologies": ["Node.js", "React", "MongoDB", "Express.js"],
       "category": "Full-Stack",
       "status": "Completed",
-      "featured": true,
-      "githubUrl": "https://github.com/ahmed-soran/crm-system",
-      "liveUrl": "https://crm-demo.example.com"
+      "featured": true
     },
     {
       "id": 2,
@@ -93,9 +92,7 @@
       "technologies": ["Go", "PostgreSQL", "Vue.js", "Redis"],
       "category": "Enterprise",
       "status": "Completed",
-      "featured": true,
-      "githubUrl": "https://github.com/ahmed-soran/erp-solution",
-      "liveUrl": "https://erp-demo.example.com"
+      "featured": true
     },
     {
       "id": 3,
@@ -104,9 +101,7 @@
       "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma"],
       "category": "SaaS",
       "status": "Completed",
-      "featured": true,
-      "githubUrl": "https://github.com/ahmed-soran/landing-builder",
-      "liveUrl": "https://landing-builder.example.com"
+      "featured": true
     },
     {
       "id": 4,
@@ -115,47 +110,76 @@
       "technologies": ["React", "Webpack", "Module Federation", "TypeScript"],
       "category": "Architecture",
       "status": "In Progress",
-      "featured": false,
-      "githubUrl": "https://github.com/ahmed-soran/microfrontend-platform"
+      "featured": false
     }
   ],
   "experience": {
     "current": {
-      "position": "Senior Full-Stack Developer",
-      "company": "TechCorp Solutions",
+      "position": "Full-Stack Developer",
+      "company": "Ruyat Technology",
       "location": "Kurdistan",
-      "startDate": "2022-01",
-      "description": "Leading development of enterprise applications, mentoring junior developers, and architecting scalable solutions for clients across various industries.",
+      "startDate": "2023-02",
+      "description": "Started as mobile developer, then transitioned to full-stack development, focusing on building robust web applications and services.",
       "responsibilities": [
-        "Lead a team of 5 developers in building scalable web applications",
-        "Architect and implement microservices using Node.js and Go",
-        "Mentor junior developers and conduct code reviews",
+        "building scalable web applications",
+        "Architect and implement microfrontends using Next.js",
         "Collaborate with product managers to define technical requirements",
         "Optimize application performance and ensure high availability"
       ],
-      "technologies": ["Node.js", "Go", "React", "PostgreSQL", "MongoDB", "AWS"]
+      "technologies": ["Next.js", "Go", "MySQL", "Docker"]
     },
     "previous": [
       {
         "position": "Full-Stack Developer",
-        "company": "StartupXYZ",
-        "location": "Remote",
-        "startDate": "2020-06",
-        "endDate": "2021-12",
+        "company": "Mode Group",
+        "location": "onSite",
+        "startDate": "2021-06",
+        "endDate": "2022-12",
         "description": "Developed and maintained multiple client projects using modern web technologies.",
-        "technologies": ["JavaScript", "React", "Node.js", "MySQL"]
+        "technologies": ["JavaScript", "React", "Node.js", "MongoDB"]
       }
     ]
   },
+  "courses": [
+    {
+      "id": 1,
+      "title": "MERN-Stack Development",
+      "provider": "Potan and GIZ",
+      "institution": "American Corner Slemani University",
+      "duration": "11 Weeks",
+      "completedDate": "2022",
+      "description": "Comprehensive course covering MongoDB, Express.js, React, and Node.js development",
+      "category": "Full-Stack"
+    },
+    {
+      "id": 2,
+      "title": "Full-Stack Development",
+      "provider": "Slemani Youth Center",
+      "duration": "10 Weeks",
+      "completedDate": "2021",
+      "description": "Complete web development bootcamp covering both frontend and backend technologies",
+      "category": "Full-Stack"
+    },
+    {
+      "id": 3,
+      "title": "Modern JavaScript",
+      "provider": "Udemy",
+      "instructor": "Jonas Schmedtmann",
+      "duration": "69 Hours",
+      "completedDate": "2021",
+      "description": "Advanced JavaScript course covering ES6+, async programming, and modern development practices",
+      "category": "JavaScript"
+    }
+  ],
   "social": {
     "github": {
-      "url": "https://github.com/ahmed-soran",
-      "username": "ahmed-soran"
+      "url": "https://github.com/ahmedsoran",
+      "username": "ahmedsoran"
     },
     "linkedin": {
-      "url": "https://linkedin.com/in/ahmed-soran",
-      "username": "ahmed-soran"
+      "url": "https://linkedin.com/in/ahmedsoran",
+      "username": "ahmedsoran"
     },
-    "email": "ahmed.soran@example.com"
+    "email": "ahmedsorann1@gmail.com"
   }
 }

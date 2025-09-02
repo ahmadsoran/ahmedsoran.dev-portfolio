@@ -197,15 +197,12 @@ export default function SkillsSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
           className='flex justify-center mt-20'>
-          <div className='flex space-x-2'>
-            {[...Array(5)].map((_, i) => (
-              <div
-                key={i}
-                className={`w-2 h-2 rounded-full bg-gradient-to-r from-gray-500 to-slate-500 opacity-${
-                  100 - i * 20
-                }`}
-              />
-            ))}
+          <div className='flex items-center space-x-4'>
+            <div className='w-8 h-px bg-gradient-to-r from-transparent to-gray-400'></div>
+            <div className='w-2 h-2 rounded-full bg-gray-400'></div>
+            <div className='w-16 h-px bg-gradient-to-r from-gray-400 to-slate-400'></div>
+            <div className='w-2 h-2 rounded-full bg-slate-400'></div>
+            <div className='w-8 h-px bg-gradient-to-r from-slate-400 to-transparent'></div>
           </div>
         </motion.div>
       </div>

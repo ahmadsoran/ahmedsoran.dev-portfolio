@@ -28,7 +28,7 @@ export default function Navigation() {
         <NavbarContent>
           <NavbarMenuToggle
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-            className='sm:hidden'
+            className='sm:hidden text-gray-700 dark:text-gray-300'
           />
           <NavbarBrand>
             <h1 className='font-bold text-xl bg-gradient-to-r from-gray-700 to-slate-700 bg-clip-text text-transparent'>

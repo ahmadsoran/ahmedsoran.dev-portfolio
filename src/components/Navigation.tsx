@@ -14,14 +14,14 @@ import {
 } from '@heroui/react'
 import { useState } from 'react'
 import data from '@/constants/data.json'
-import { fadeIn } from '@/constants/animations'
+import { fadeInDown } from '@/constants/animations'
 import ThemeToggle from './ThemeToggle'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <motion.div {...fadeIn} className='fixed top-0 w-full z-50'>
+    <motion.div {...fadeInDown} className='fixed top-0 w-full z-50'>
       <Navbar
         onMenuOpenChange={setIsMenuOpen}
         className='bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200/20'

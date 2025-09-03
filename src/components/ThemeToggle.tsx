@@ -6,7 +6,7 @@ import { useTheme } from './ThemeProvider'
 import { IconSun, IconMoon, IconDeviceDesktop } from '@tabler/icons-react'
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme, systemTheme } = useTheme()
 
   const toggleTheme = () => {
     if (theme === 'light') {
@@ -14,7 +14,7 @@ export default function ThemeToggle() {
     } else if (theme === 'dark') {
       setTheme('light')
     } else {
-      setTheme('dark')
+      setTheme(systemTheme === 'dark' ? 'light' : 'dark')
     }
   }
 

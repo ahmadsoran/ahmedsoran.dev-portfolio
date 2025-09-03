@@ -15,7 +15,7 @@ interface BlogCardProps {
   priority?: boolean
 }
 
-export default function BlogCard({ post, priority = false }: BlogCardProps) {
+export default function BlogCard({ post }: BlogCardProps) {
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',

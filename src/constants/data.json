@@ -42,11 +42,12 @@
     },
     {
       "id": 4,
-      "name": "PostgreSQL",
+      "name": "SQL DBs",
       "category": "Database",
       "level": "Advanced",
       "icon": "database"
     },
+
     {
       "id": 5,
       "name": "MongoDB",
@@ -74,6 +75,20 @@
       "category": "Language",
       "level": "Expert",
       "icon": "code"
+    },
+    {
+      "id": 9,
+      "name": "React Native",
+      "category": "Mobile",
+      "level": "Advanced",
+      "icon": "device-mobile"
+    },
+    {
+      "id": 10,
+      "name": "Electron.js",
+      "category": "Desktop",
+      "level": "Intermediate",
+      "icon": "device-desktop"
     }
   ],
   "projects": [

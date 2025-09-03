@@ -12,6 +12,8 @@ import {
   IconBrandTypescript,
   IconBrandNextjs,
   IconBrandMongodb,
+  IconBrandReactNative,
+  IconDeviceDesktop,
 } from '@tabler/icons-react'
 import data from '@/constants/data.json'
 import { fadeIn, staggerContainer, scaleIn } from '@/constants/animations'
@@ -33,8 +35,13 @@ const getSkillIcon = (skillName: string) => {
       return IconBrandReact
     case 'mongodb':
       return IconBrandMongodb
-    case 'postgresql':
+    case 'sqldbs':
       return IconDatabase
+
+    case 'reactnative':
+      return IconBrandReactNative
+    case 'electronjs':
+      return IconDeviceDesktop
     default:
       return IconCode
   }

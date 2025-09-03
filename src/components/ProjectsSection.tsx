@@ -65,7 +65,7 @@ export default function ProjectsSection() {
           initial='initial'
           whileInView='animate'
           viewport={{ once: true }}
-          className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
+          className='grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch'>
           {featuredProjects.map((project, index) => {
             const CategoryIcon = getCategoryIcon(project.category)
 
@@ -118,49 +118,51 @@ export default function ProjectsSection() {
                     </div>
                   </CardHeader>
 
-                  <CardBody className='relative z-10 pt-0 space-y-6'>
+                  <CardBody className='relative z-10 pt-0 space-y-6 flex justify-between'>
                     {/* Description */}
                     <p className='text-gray-600 dark:text-gray-300 leading-relaxed text-base'>
                       {project.description}
                     </p>
 
-                    {/* Technologies */}
-                    <div className='space-y-3'>
-                      <div className='flex items-center gap-2'>
-                        <IconCalendar size={16} className='text-gray-500' />
-                        <span className='text-sm font-medium text-gray-600 dark:text-gray-400'>
-                          Technologies Used
-                        </span>
-                      </div>
-                      <div className='flex flex-wrap gap-2'>
-                        {project.technologies.map((tech, techIndex) => (
-                          <Chip
-                            key={tech}
-                            variant='bordered'
-                            size='sm'
-                            className={`text-xs font-medium border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 transition-colors duration-200 ${
-                              techIndex === 0
-                                ? 'bg-gray-100 dark:bg-gray-700'
-                                : ''
-                            }`}>
-                            {tech}
-                          </Chip>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Project Metrics or Additional Info */}
-                    <div className='bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4'>
-                      <div className='flex items-center justify-between text-sm'>
+                    <div className='space-y-6'>
+                      {/* Technologies */}
+                      <div className='space-y-3'>
                         <div className='flex items-center gap-2'>
-                          <IconStar size={16} className='text-yellow-500' />
-                          <span className='font-medium text-gray-700 dark:text-gray-300'>
-                            Featured Project
+                          <IconCalendar size={16} className='text-gray-500' />
+                          <span className='text-sm font-medium text-gray-600 dark:text-gray-400'>
+                            Technologies Used
                           </span>
                         </div>
-                        <span className='text-gray-500 dark:text-gray-400 text-xs'>
-                          {project.category} Solution
-                        </span>
+                        <div className='flex flex-wrap gap-2'>
+                          {project.technologies.map((tech, techIndex) => (
+                            <Chip
+                              key={tech}
+                              variant='bordered'
+                              size='sm'
+                              className={`text-xs font-medium border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 transition-colors duration-200 ${
+                                techIndex === 0
+                                  ? 'bg-gray-100 dark:bg-gray-700'
+                                  : ''
+                              }`}>
+                              {tech}
+                            </Chip>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Project Metrics or Additional Info */}
+                      <div className='bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4'>
+                        <div className='flex items-center justify-between text-sm'>
+                          <div className='flex items-center gap-2'>
+                            <IconStar size={16} className='text-yellow-500' />
+                            <span className='font-medium text-gray-700 dark:text-gray-300'>
+                              Featured Project
+                            </span>
+                          </div>
+                          <span className='text-gray-500 dark:text-gray-400 text-xs'>
+                            {project.category} Solution
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </CardBody>

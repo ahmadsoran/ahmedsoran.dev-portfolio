@@ -105,7 +105,7 @@ export default function ContactSection() {
                 className='group'>
                 <Card className='h-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:bg-white dark:group-hover:bg-gray-800 overflow-hidden'>
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${method.color}/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                    className={`absolute inset-0 bg-gradient-to-br ${method.color}/5 opacity-0 group-hover:opacity-10 dark:group-hover:opacity-100 transition-opacity duration-500`}></div>
 
                   <CardBody className='relative z-10 text-center p-8 space-y-6'>
                     {/* Icon */}

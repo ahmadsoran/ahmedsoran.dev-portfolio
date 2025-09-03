@@ -105,7 +105,7 @@
       "id": 2,
       "title": "ERP Solution",
       "description": "Enterprise resource planning system for small to medium businesses. Includes inventory management, HR modules, and financial reporting.",
-      "technologies": ["Go", "PostgreSQL", "Vue.js", "Redis"],
+      "technologies": ["Go", "PostgreSQL", "React", "Redis"],
       "category": "Enterprise",
       "status": "Completed",
       "featured": true
@@ -118,15 +118,6 @@
       "category": "Frontend",
       "status": "Completed",
       "featured": true
-    },
-    {
-      "id": 4,
-      "title": "Microfrontend Platform",
-      "description": "Scalable microfrontend architecture for large applications. Implements module federation and shared component libraries.",
-      "technologies": ["React", "Webpack", "Module Federation", "TypeScript"],
-      "category": "Architecture",
-      "status": "In Progress",
-      "featured": false
     }
   ],
   "experience": {

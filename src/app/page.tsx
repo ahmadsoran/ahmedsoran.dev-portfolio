@@ -9,6 +9,9 @@ import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 import { getPosts, type GhostPost } from '@/lib/ghost'
 
+// Revalidate every 12 hours (43200 seconds)
+export const revalidate = 43200
+
 export default async function Home() {
   // Fetch recent blog posts
   let recentPosts: GhostPost[] = []

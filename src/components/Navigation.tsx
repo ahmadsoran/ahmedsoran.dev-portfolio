@@ -15,6 +15,7 @@ import {
 import { useState } from 'react'
 import data from '@/constants/data.json'
 import { fadeIn } from '@/constants/animations'
+import ThemeToggle from './ThemeToggle'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -52,6 +53,9 @@ export default function Navigation() {
 
         <NavbarContent justify='end'>
           <NavbarItem>
+            <ThemeToggle />
+          </NavbarItem>
+          <NavbarItem>
             <Button
               as={Link}
               href='#contact'
@@ -75,6 +79,14 @@ export default function Navigation() {
               </Link>
             </NavbarMenuItem>
           ))}
+          <NavbarMenuItem>
+            <div className='flex items-center gap-2 pt-4'>
+              <span className='text-sm text-gray-600 dark:text-gray-400'>
+                Theme:
+              </span>
+              <ThemeToggle />
+            </div>
+          </NavbarMenuItem>
         </NavbarMenu>
       </Navbar>
     </motion.div>

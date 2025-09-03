@@ -187,16 +187,3 @@ Add this to `.env.local` for debugging:
 ```bash
 DEBUG=ghost:*
 ```
-
-## Contributing
-
-To contribute to the blog functionality:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make changes and test thoroughly
-4. Submit a pull request
-
-## License
-
-This blog implementation is part of the portfolio and follows the same license terms.

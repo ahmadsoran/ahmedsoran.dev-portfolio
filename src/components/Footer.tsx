@@ -7,6 +7,7 @@ import {
   IconBrandLinkedin,
   IconMail,
   IconArrowUp,
+  IconCoffee,
 } from '@tabler/icons-react'
 import { useState, useEffect } from 'react'
 import data from '@/constants/data.json'
@@ -126,10 +127,27 @@ export default function Footer() {
             viewport={{ once: true }}
             className='flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm'>
             <p>
-              © {currentYear} {data.personalInfo.name}. All rights reserved.
+              This template is{' '}
+              <span className='font-semibold'>open source</span> and free for
+              anyone to use
+              <a
+                href='https://github.com/ahmadsoran/my-portfolio-v4'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='hover:text-gray-100 underline ml-1'>
+                GitHub
+              </a>
+              .
             </p>
             <p className='mt-2 md:mt-0'>
               Built with Next.js, Hero UI, and Tailwind CSS
+            </p>
+            <p className='mt-2 md:mt-0 flex items-center gap-1'>
+              Made with
+              <span className='text-amber-400'>
+                <IconCoffee size={18} />
+              </span>
+              by {data.personalInfo.name}
             </p>
           </motion.div>
         </div>

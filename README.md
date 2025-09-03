@@ -55,3 +55,5 @@ bun run build
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new) from the creators of Next.js.
+
+Check Out GhostBlog Setup Doc [here](./BLOG_SETUP.md).

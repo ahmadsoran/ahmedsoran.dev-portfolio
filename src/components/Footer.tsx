@@ -13,7 +13,6 @@ import { useState, useEffect } from 'react'
 import data from '@/constants/data.json'
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
   const [showScrollTop, setShowScrollTop] = useState(false)
 
   useEffect(() => {
@@ -46,7 +45,7 @@ export default function Footer() {
         <Button
           isIconOnly
           size='lg'
-          onClick={scrollToTop}
+          onPress={scrollToTop}
           className='w-14 h-14 bg-gradient-to-r from-gray-700 to-slate-700 hover:from-gray-800 hover:to-slate-800 text-white shadow-lg hover:shadow-xl transition-all duration-300'
           aria-label='Scroll to top'>
           <IconArrowUp size={24} />

@@ -125,7 +125,7 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
             className='flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm'>
-            <p>
+            <p className='text-center md:text-left'>
               This template is{' '}
               <span className='font-semibold'>open source</span> and free for
               anyone to use

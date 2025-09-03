@@ -574,33 +574,6 @@ export default function BlogContent({
                   </Card>
                 </motion.div>
               )}
-
-              {/* Newsletter */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}>
-                <Card className='bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700'>
-                  <CardBody className='text-center'>
-                    <h3 className='text-lg font-semibold text-gray-900 dark:text-white mb-2'>
-                      Stay Updated
-                    </h3>
-                    <p className='text-sm text-gray-600 dark:text-gray-400 mb-4'>
-                      Get notified when I publish new articles and insights.
-                    </p>
-                    <div className='space-y-3'>
-                      <input
-                        type='email'
-                        placeholder='Your email address'
-                        className='w-full px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500/20 text-sm'
-                      />
-                      <Button color='primary' size='sm' className='w-full'>
-                        Subscribe
-                      </Button>
-                    </div>
-                  </CardBody>
-                </Card>
-              </motion.div>
             </div>
           </div>
         </div>

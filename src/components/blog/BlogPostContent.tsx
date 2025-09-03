@@ -163,7 +163,7 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
                 loading='lazy'
                 placeholder='blur'
                 blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/gnrDQAAAABJRU5ErkJggg=='
-                className='object-cover'
+                className='object-cover w-full h-full'
               />
             </div>
             {post.feature_image_caption && (

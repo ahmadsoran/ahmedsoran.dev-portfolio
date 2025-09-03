@@ -126,7 +126,7 @@ export default function BlogContent({
                               loading='lazy'
                               placeholder='blur'
                               blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/gnrDQAAAABJRU5ErkJggg=='
-                              className='object-cover group-hover:scale-105 transition-transform duration-300'
+                              className='object-cover w-full h-full group-hover:scale-105 transition-transform duration-300'
                               // priority={index < 3} // Priority load for first 3 images
                               onError={(e) => {
                                 console.warn(
@@ -314,7 +314,7 @@ export default function BlogContent({
                                 loading='lazy'
                                 placeholder='blur'
                                 blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/gnrDQAAAABJRU5ErkJggg=='
-                                className='object-cover group-hover:scale-105 transition-transform duration-300'
+                                className='object-cover w-full h-full group-hover:scale-105 transition-transform duration-300'
                                 // priority={index < 2} // Priority for first 2 images
                                 onError={(e) => {
                                   console.warn(

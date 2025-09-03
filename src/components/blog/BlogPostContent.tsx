@@ -158,9 +158,12 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
               <Image
                 src={post.feature_image}
                 alt={post.feature_image_alt || post.title}
-                fill
+                width={800}
+                height={400}
+                loading='lazy'
+                placeholder='blur'
+                blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/gnrDQAAAABJRU5ErkJggg=='
                 className='object-cover'
-                priority
               />
             </div>
             {post.feature_image_caption && (

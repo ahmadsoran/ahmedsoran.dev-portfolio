@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import { Suspense } from 'react'
-import Navigation from '@/components/Navigation'
 import BlogHero from '@/components/blog/BlogHero'
 import BlogContent from '@/components/blog/BlogContent'
 import { getPosts, getFeaturedPosts, getTags } from '@/lib/ghost'
@@ -54,43 +53,32 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     const { posts, meta } = postsResponse
 
     return (
-      <div className='min-h-screen bg-gradient-to-br from-gray-50 via-white to-stone-50 dark:from-gray-900 dark:via-gray-800 dark:to-slate-900'>
-        <Navigation />
-
-        <main className='pt-[65px]'>
-          <BlogHero searchParams={searchParamsValue} />
-
-          <Suspense fallback={<LoadingSpinner />}>
-            <BlogContent
-              posts={posts}
-              featuredPosts={featuredPosts}
-              tags={tags}
-              pagination={meta.pagination}
-              currentTag={tag}
-              searchQuery={search}
-              page={page}
-            />
-          </Suspense>
-        </main>
-      </div>
+      <>
+        <BlogHero searchParams={searchParamsValue} />
+        <Suspense fallback={<LoadingSpinner />}>
+          <BlogContent
+            posts={posts}
+            featuredPosts={featuredPosts}
+            tags={tags}
+            pagination={meta.pagination}
+            currentTag={tag}
+            searchQuery={search}
+            page={page}
+          />
+        </Suspense>
+      </>
     )
   } catch (error) {
     console.error('Error loading blog page:', error)
 
     return (
-      <div className='min-h-screen bg-gradient-to-br from-gray-50 via-white to-stone-50 dark:from-gray-900 dark:via-gray-800 dark:to-slate-900'>
-        <Navigation />
-
-        <main className='pt-[65px]'>
-          <div className='container mx-auto px-6 py-12 text-center'>
-            <h1 className='text-2xl font-bold text-gray-900 dark:text-white mb-4'>
-              Unable to load blog posts
-            </h1>
-            <p className='text-gray-600 dark:text-gray-400'>
-              Please check your Ghost CMS connection and try again later.
-            </p>
-          </div>
-        </main>
+      <div className='container mx-auto px-6 py-12 text-center'>
+        <h1 className='text-2xl font-bold text-gray-900 dark:text-white mb-4'>
+          Unable to load blog posts
+        </h1>
+        <p className='text-gray-600 dark:text-gray-400'>
+          Please check your Ghost CMS connection and try again later.
+        </p>
       </div>
     )
   }

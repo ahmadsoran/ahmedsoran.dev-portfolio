@@ -51,7 +51,7 @@ export default function ThemeToggle() {
         isIconOnly
         variant='ghost'
         size='sm'
-        onClick={toggleTheme}
+        onPress={toggleTheme}
         aria-label={`Switch to ${
           theme === 'light' ? 'dark' : theme === 'dark' ? 'system' : 'light'
         } mode`}

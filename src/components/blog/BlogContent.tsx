@@ -121,9 +121,13 @@ export default function BlogContent({
                             <Image
                               src={post.feature_image}
                               alt={post.feature_image_alt || post.title}
-                              fill
+                              width={800}
+                              height={400}
+                              loading='lazy'
+                              placeholder='blur'
+                              blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/gnrDQAAAABJRU5ErkJggg=='
                               className='object-cover group-hover:scale-105 transition-transform duration-300'
-                              priority={index < 3} // Priority load for first 3 images
+                              // priority={index < 3} // Priority load for first 3 images
                               onError={(e) => {
                                 console.warn(
                                   'Failed to load featured image:',
@@ -305,9 +309,13 @@ export default function BlogContent({
                               <Image
                                 src={post.feature_image}
                                 alt={post.feature_image_alt || post.title}
-                                fill
+                                width={800}
+                                height={400}
+                                loading='lazy'
+                                placeholder='blur'
+                                blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/gnrDQAAAABJRU5ErkJggg=='
                                 className='object-cover group-hover:scale-105 transition-transform duration-300'
-                                priority={index < 2} // Priority for first 2 images
+                                // priority={index < 2} // Priority for first 2 images
                                 onError={(e) => {
                                   console.warn(
                                     'Failed to load post image:',

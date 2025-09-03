@@ -1,5 +1,6 @@
 'use client'
 
+import { HeroUIProvider } from '@heroui/react'
 import { createContext, useContext, useEffect, useState } from 'react'
 
 type Theme = 'dark' | 'light' | 'system'
@@ -63,7 +64,7 @@ export function ThemeProvider({
 
   return (
     <ThemeProviderContext.Provider {...props} value={value}>
-      {children}
+      <HeroUIProvider>{children}</HeroUIProvider>
     </ThemeProviderContext.Provider>
   )
 }

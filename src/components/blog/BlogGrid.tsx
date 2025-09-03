@@ -1,5 +1,4 @@
 'use client'
-
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -119,7 +118,11 @@ export default function BlogGrid({
                     <Image
                       src={post.feature_image}
                       alt={post.feature_image_alt || post.title}
-                      fill
+                      width={800}
+                      height={400}
+                      loading='lazy'
+                      placeholder='blur'
+                      blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/gnrDQAAAABJRU5ErkJggg=='
                       className='object-cover group-hover:scale-105 transition-transform duration-300'
                     />
                   ) : (

@@ -109,7 +109,11 @@ export default function BlogSidebar({
                       <Image
                         src={post.feature_image}
                         alt={post.feature_image_alt || post.title}
-                        fill
+                        width={64}
+                        height={64}
+                        loading='lazy'
+                        placeholder='blur'
+                        blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/gnrDQAAAABJRU5ErkJggg=='
                         className='object-cover group-hover:scale-105 transition-transform duration-300'
                       />
                     ) : (

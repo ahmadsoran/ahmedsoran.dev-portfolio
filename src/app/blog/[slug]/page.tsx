@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import Navigation from '@/components/Navigation'
 import BlogPostContent from '@/components/blog/BlogPostContent'
 import { getPostBySlug, getPosts } from '@/lib/ghost'
 
@@ -76,12 +75,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       notFound()
     }
 
-    return (
-      <>
-        <Navigation />
-        <BlogPostContent post={post} />
-      </>
-    )
+    return <BlogPostContent post={post} />
   } catch (error) {
     console.error('Error loading blog post:', error)
     notFound()

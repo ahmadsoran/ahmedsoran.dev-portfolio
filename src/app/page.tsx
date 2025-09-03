@@ -1,4 +1,3 @@
-import Navigation from '@/components/Navigation'
 import HeroSection from '@/components/HeroSection'
 import SkillsSection from '@/components/SkillsSection'
 import ProjectsSection from '@/components/ProjectsSection'
@@ -25,7 +24,6 @@ export default async function Home() {
 
   return (
     <main className='min-h-dvh'>
-      <Navigation />
       <HeroSection />
       <SkillsSection />
       <ProjectsSection />

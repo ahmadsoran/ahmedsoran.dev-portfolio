@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
-import Provider from '@/components/provider'
+import Provider from '@/components/Providers'
 import StructuredData from '@/components/StructuredData'
+import Navigation from '@/components/Navigation'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -187,7 +188,6 @@ export default function RootLayout({
 
         {/* Security Headers */}
         <meta httpEquiv='X-Content-Type-Options' content='nosniff' />
-        <meta httpEquiv='X-Frame-Options' content='DENY' />
         <meta httpEquiv='X-XSS-Protection' content='1; mode=block' />
 
         {/* Preconnect to external domains for performance */}
@@ -198,8 +198,6 @@ export default function RootLayout({
           crossOrigin='anonymous'
         />
 
-        {/* Favicon and App Icons */}
-        {/* favicon.ico is automatically handled by Next.js from app directory */}
         <link
           rel='apple-touch-icon'
           sizes='180x180'
@@ -238,7 +236,10 @@ export default function RootLayout({
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Provider>{children}</Provider>
+        <Provider>
+          <Navigation />
+          {children}
+        </Provider>
       </body>
     </html>
   )

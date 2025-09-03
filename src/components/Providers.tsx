@@ -1,12 +1,17 @@
 'use client'
-
-import { HeroUIProvider } from '@heroui/react'
+import { useEffect, useState } from 'react'
 import { ThemeProvider } from './ThemeProvider'
 
 export default function Provider({ children }: { children: React.ReactNode }) {
+  const [hydrated, setHydrated] = useState(false)
+
+  useEffect(() => {
+    setHydrated(true)
+  }, [])
+
   return (
     <ThemeProvider defaultTheme='system' storageKey='portfolio-theme'>
-      <HeroUIProvider>{children}</HeroUIProvider>
+      {hydrated && children}
     </ThemeProvider>
   )
 }

@@ -67,6 +67,9 @@ export default function FeaturedPosts({ posts }: FeaturedPostsProps) {
                       src={mainPost.feature_image}
                       alt={mainPost.feature_image_alt || mainPost.title}
                       fill
+                      loading='lazy'
+                      placeholder='blur'
+                      blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/gnrDQAAAABJRU5ErkJggg=='
                       className='object-cover group-hover:scale-105 transition-transform duration-300'
                     />
                   ) : (
@@ -161,6 +164,9 @@ export default function FeaturedPosts({ posts }: FeaturedPostsProps) {
                             src={post.feature_image}
                             alt={post.feature_image_alt || post.title}
                             fill
+                            loading='lazy'
+                            placeholder='blur'
+                            blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/gnrDQAAAABJRU5ErkJggg=='
                             className='object-cover group-hover:scale-105 transition-transform duration-300'
                           />
                         ) : (

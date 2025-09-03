@@ -33,9 +33,12 @@ export default function BlogCard({ post, priority = false }: BlogCardProps) {
             <Image
               src={post.feature_image}
               alt={post.feature_image_alt || post.title}
-              fill
+              width={800}
+              height={400}
+              loading='lazy'
+              placeholder='blur'
+              blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/gnrDQAAAABJRU5ErkJggg=='
               className='object-cover group-hover:scale-105 transition-transform duration-300'
-              priority={priority}
               onError={(e) => {
                 console.warn('Failed to load post image:', post.feature_image)
                 // Replace with fallback on error

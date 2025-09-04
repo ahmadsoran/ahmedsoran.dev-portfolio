@@ -58,7 +58,7 @@ export default function Navigation() {
           <NavbarItem>
             <Button
               as={Link}
-              href='#contact'
+              href='/#contact'
               color='primary'
               variant='flat'
               size='sm'

@@ -57,8 +57,7 @@ export default function ExperienceSection() {
             Professional Experience
           </h2>
           <p className='text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed'>
-            My journey in building innovative solutions and leading technical
-            teams
+            My journey in building innovative solutions
           </p>
         </motion.div>
 

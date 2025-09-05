@@ -122,15 +122,33 @@ export const getPosts = createCachedFunction(
       page?: number
       filter?: string
       include?: string
+      search?: string
     } = {}
   ): Promise<GhostPostsResponse> {
     try {
-      const { limit = 15, page = 1, filter, include = 'tags,authors' } = options
+      const {
+        limit = 15,
+        page = 1,
+        filter,
+        include = 'tags,authors',
+        search,
+      } = options
+
+      // Build filter string
+      let filterString = filter || ''
+
+      // Add search filter for title if search term is provided
+      if (search && search.trim()) {
+        const searchFilter = `title:~'${search.trim()}'`
+        filterString = filterString
+          ? `${filterString}+${searchFilter}`
+          : searchFilter
+      }
 
       const posts = await api.posts.browse({
         limit,
         page,
-        filter,
+        filter: filterString || undefined,
         include,
       })
 
@@ -146,6 +164,30 @@ export const getPosts = createCachedFunction(
   (options) => `posts:${JSON.stringify(options)}`
 )
 
+// Search posts by title with caching
+export const searchPosts = createCachedFunction(
+  async function (
+    searchTerm: string,
+    options: {
+      limit?: number
+      page?: number
+      tag?: string
+    } = {}
+  ): Promise<GhostPostsResponse> {
+    const { limit = 15, page = 1, tag } = options
+
+    return getPosts({
+      limit,
+      page,
+      filter: tag ? `tag:${tag}` : undefined,
+      search: searchTerm,
+      include: 'tags,authors',
+    })
+  },
+  (searchTerm: string, options: any) =>
+    `search:${searchTerm}:${JSON.stringify(options)}`
+)
+
 // Fetch a single post by slug with caching
 export const getPostBySlug = createCachedFunction(
   async function (slug: string): Promise<GhostPost | null> {
@@ -158,7 +200,7 @@ export const getPostBySlug = createCachedFunction(
       return null
     }
   },
-  (slug) => `post:${slug}`
+  (slug: string) => `post:${slug}`
 )
 
 // Fetch posts by tag

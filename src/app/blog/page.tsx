@@ -59,6 +59,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         page,
         limit: 12,
         filter: tag ? `tag:${tag}` : undefined,
+        search: search,
       }),
       getFeaturedPosts(6),
       getTags(),

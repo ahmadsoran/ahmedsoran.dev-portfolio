@@ -3,21 +3,21 @@ import { cache } from 'react'
 
 // Cache configuration
 const CACHE_DURATION = 12 * 60 * 60 * 1000 // 12 hours in milliseconds
-const cacheStore = new Map<string, { data: any; timestamp: number }>()
+const cacheStore = new Map<string, { data: unknown; timestamp: number }>()
 
 // Custom cache function with time-based expiration
-function createCachedFunction<T extends (...args: any[]) => Promise<any>>(
-  fn: T,
-  getCacheKey: (...args: Parameters<T>) => string
-): T {
-  return cache(async (...args: Parameters<T>) => {
+function createCachedFunction<TArgs extends unknown[], TReturn>(
+  fn: (...args: TArgs) => Promise<TReturn>,
+  getCacheKey: (...args: TArgs) => string
+) {
+  return cache(async (...args: TArgs) => {
     const cacheKey = getCacheKey(...args)
     const now = Date.now()
 
     // Check if we have cached data that's still fresh
     const cached = cacheStore.get(cacheKey)
     if (cached && now - cached.timestamp < CACHE_DURATION) {
-      return cached.data
+      return cached.data as TReturn
     }
 
     // Fetch fresh data
@@ -27,7 +27,7 @@ function createCachedFunction<T extends (...args: any[]) => Promise<any>>(
     cacheStore.set(cacheKey, { data: result, timestamp: now })
 
     return result
-  }) as T
+  })
 }
 
 // Initialize the Ghost Content API client
@@ -184,8 +184,10 @@ export const searchPosts = createCachedFunction(
       include: 'tags,authors',
     })
   },
-  (searchTerm: string, options: any) =>
-    `search:${searchTerm}:${JSON.stringify(options)}`
+  (
+    searchTerm: string,
+    options: { limit?: number; page?: number; tag?: string }
+  ) => `search:${searchTerm}:${JSON.stringify(options)}`
 )
 
 // Fetch a single post by slug with caching

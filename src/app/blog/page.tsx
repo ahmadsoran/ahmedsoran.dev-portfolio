@@ -1,9 +1,7 @@
 import { Metadata } from 'next'
-import { Suspense } from 'react'
 import BlogHero from '@/components/blog/BlogHero'
 import BlogContent from '@/components/blog/BlogContent'
 import { getPosts, getFeaturedPosts, getTags } from '@/lib/ghost'
-import LoadingSpinner from '@/components/ui/LoadingSpinner'
 
 export const metadata: Metadata = {
   title: 'Blog | Ahmed Soran - Insights & Thoughts',
@@ -15,12 +13,28 @@ export const metadata: Metadata = {
     description:
       'Discover insights, thoughts, and learnings about technology, development, and life.',
     type: 'website',
+    images: [
+      {
+        url: 'https://ahmedsoran.dev/ahmedweb-desktop.png',
+        width: 1200,
+        height: 630,
+        alt: 'Blog | Ahmed Soran',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Blog | Ahmed Soran',
     description:
       'Discover insights, thoughts, and learnings about technology, development, and life.',
+    images: [
+      {
+        url: 'https://ahmedsoran.dev/ahmedweb-desktop.png',
+        width: 1200,
+        height: 630,
+        alt: 'Blog | Ahmed Soran',
+      },
+    ],
   },
 }
 
@@ -53,20 +67,18 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     const { posts, meta } = postsResponse
 
     return (
-      <>
+      <div className='pt-[65px]'>
         <BlogHero searchParams={searchParamsValue} />
-        <Suspense fallback={<LoadingSpinner />}>
-          <BlogContent
-            posts={posts}
-            featuredPosts={featuredPosts}
-            tags={tags}
-            pagination={meta.pagination}
-            currentTag={tag}
-            searchQuery={search}
-            page={page}
-          />
-        </Suspense>
-      </>
+        <BlogContent
+          posts={posts}
+          featuredPosts={featuredPosts}
+          tags={tags}
+          pagination={meta.pagination}
+          currentTag={tag}
+          searchQuery={search}
+          page={page}
+        />
+      </div>
     )
   } catch (error) {
     console.error('Error loading blog page:', error)

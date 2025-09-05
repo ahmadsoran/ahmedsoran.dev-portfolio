@@ -114,7 +114,7 @@ export const metadata: Metadata = {
     siteName: 'Ahmed Soran Portfolio',
     images: [
       {
-        url: '/ahmedweb-desktop.png',
+        url: 'https://ahmedsoran.dev/ahmedweb-desktop.png',
         width: 1200,
         height: 630,
         alt: 'Ahmed Soran - Full-Stack Developer Portfolio',
@@ -129,7 +129,7 @@ export const metadata: Metadata = {
       'Ahmed Soran - Full-Stack Developer | JavaScript, Node.js, Go Expert',
     description:
       'Experienced full-stack developer specializing in JavaScript, Node.js, React, Next.js, Go, and database technologies. Building scalable applications and enterprise solutions.',
-    images: ['/ahmedweb-desktop.png'],
+    images: ['https://ahmedsoran.dev/ahmedweb-desktop.png'],
     creator: '@ahmadsoran', // Add your Twitter handle if you have one
     site: '@ahmadsoran',
   },

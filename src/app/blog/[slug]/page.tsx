@@ -32,7 +32,14 @@ export async function generateMetadata({
       openGraph: {
         title: post.title,
         description: post.custom_excerpt || post.excerpt || '',
-        images: post.feature_image ? [post.feature_image] : [],
+        images: post.feature_image
+          ? {
+              url: post.feature_image,
+              width: 800,
+              height: 600,
+              alt: post.feature_image_alt || post.title,
+            }
+          : [],
         type: 'article',
         publishedTime: post.published_at,
         authors: post.primary_author ? [post.primary_author.name] : [],
@@ -42,7 +49,16 @@ export async function generateMetadata({
         card: 'summary_large_image',
         title: post.title,
         description: post.custom_excerpt || post.excerpt || '',
-        images: post.feature_image ? [post.feature_image] : [],
+        images: post.feature_image
+          ? [
+              {
+                url: post.feature_image,
+                width: 800,
+                height: 600,
+                alt: post.feature_image_alt || post.title,
+              },
+            ]
+          : [],
       },
     }
   } catch (error) {

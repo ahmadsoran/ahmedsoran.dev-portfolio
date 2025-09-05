@@ -129,7 +129,14 @@ export const metadata: Metadata = {
       'Ahmed Soran - Full-Stack Developer | JavaScript, Node.js, Go Expert',
     description:
       'Experienced full-stack developer specializing in JavaScript, Node.js, React, Next.js, Go, and database technologies. Building scalable applications and enterprise solutions.',
-    images: ['https://ahmedsoran.dev/ahmedweb-desktop.png'],
+    images: [
+      {
+        url: 'https://ahmedsoran.dev/ahmedweb-desktop.png',
+        width: 1200,
+        height: 630,
+        alt: 'Ahmed Soran Portfolio',
+      },
+    ],
     creator: '@ahmadsoran', // Add your Twitter handle if you have one
     site: '@ahmadsoran',
   },

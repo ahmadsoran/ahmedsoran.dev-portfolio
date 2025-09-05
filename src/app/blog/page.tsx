@@ -97,4 +97,4 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 }
 
 // Enable Next.js ISR (Incremental Static Regeneration)
-export const revalidate = 1800 // Revalidate every 30 minutes Metadata } from 'next'
+export const revalidate = 43200 // Revalidate every 12 hours (43200 seconds)

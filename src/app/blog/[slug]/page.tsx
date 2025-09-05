@@ -3,6 +3,9 @@ import { notFound } from 'next/navigation'
 import BlogPostContent from '@/components/blog/BlogPostContent'
 import { getPostBySlug, getPosts } from '@/lib/ghost'
 
+// Revalidate every 12 hours
+export const revalidate = 43200
+
 interface BlogPostPageProps {
   params: Promise<{
     slug: string

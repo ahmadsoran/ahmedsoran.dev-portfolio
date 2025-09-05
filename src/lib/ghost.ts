@@ -1,4 +1,34 @@
 import GhostContentAPI from '@tryghost/content-api'
+import { cache } from 'react'
+
+// Cache configuration
+const CACHE_DURATION = 12 * 60 * 60 * 1000 // 12 hours in milliseconds
+const cacheStore = new Map<string, { data: any; timestamp: number }>()
+
+// Custom cache function with time-based expiration
+function createCachedFunction<T extends (...args: any[]) => Promise<any>>(
+  fn: T,
+  getCacheKey: (...args: Parameters<T>) => string
+): T {
+  return cache(async (...args: Parameters<T>) => {
+    const cacheKey = getCacheKey(...args)
+    const now = Date.now()
+
+    // Check if we have cached data that's still fresh
+    const cached = cacheStore.get(cacheKey)
+    if (cached && now - cached.timestamp < CACHE_DURATION) {
+      return cached.data
+    }
+
+    // Fetch fresh data
+    const result = await fn(...args)
+
+    // Cache the result
+    cacheStore.set(cacheKey, { data: result, timestamp: now })
+
+    return result
+  }) as T
+}
 
 // Initialize the Ghost Content API client
 const api = new GhostContentAPI({
@@ -85,93 +115,106 @@ export interface GhostPostsResponse {
 }
 
 // Fetch all posts with caching
-export async function getPosts(
-  options: {
-    limit?: number
-    page?: number
-    filter?: string
-    include?: string
-  } = {}
-): Promise<GhostPostsResponse> {
-  try {
-    const { limit = 15, page = 1, filter, include = 'tags,authors' } = options
+export const getPosts = createCachedFunction(
+  async function (
+    options: {
+      limit?: number
+      page?: number
+      filter?: string
+      include?: string
+    } = {}
+  ): Promise<GhostPostsResponse> {
+    try {
+      const { limit = 15, page = 1, filter, include = 'tags,authors' } = options
 
-    const posts = await api.posts.browse({
-      limit,
-      page,
-      filter,
-      include,
-    })
+      const posts = await api.posts.browse({
+        limit,
+        page,
+        filter,
+        include,
+      })
 
-    return {
-      posts: posts.map(formatPost),
-      meta: posts.meta,
+      return {
+        posts: posts.map(formatPost),
+        meta: posts.meta,
+      }
+    } catch (error) {
+      console.error('Error fetching posts:', error)
+      throw new Error('Failed to fetch posts')
     }
-  } catch (error) {
-    console.error('Error fetching posts:', error)
-    throw new Error('Failed to fetch posts')
-  }
-}
+  },
+  (options) => `posts:${JSON.stringify(options)}`
+)
 
 // Fetch a single post by slug with caching
-export async function getPostBySlug(slug: string): Promise<GhostPost | null> {
-  try {
-    const post = await api.posts.read({ slug }, { include: 'tags,authors' })
+export const getPostBySlug = createCachedFunction(
+  async function (slug: string): Promise<GhostPost | null> {
+    try {
+      const post = await api.posts.read({ slug }, { include: 'tags,authors' })
 
-    return formatPost(post)
-  } catch (error) {
-    console.error('Error fetching post:', error)
-    return null
-  }
-}
+      return formatPost(post)
+    } catch (error) {
+      console.error('Error fetching post:', error)
+      return null
+    }
+  },
+  (slug) => `post:${slug}`
+)
 
 // Fetch posts by tag
-export async function getPostsByTag(
-  tagSlug: string,
-  options: { limit?: number; page?: number } = {}
-): Promise<GhostPostsResponse> {
-  const { limit = 15, page = 1 } = options
+export const getPostsByTag = createCachedFunction(
+  async function (
+    tagSlug: string,
+    options: { limit?: number; page?: number } = {}
+  ): Promise<GhostPostsResponse> {
+    const { limit = 15, page = 1 } = options
 
-  return getPosts({
-    limit,
-    page,
-    filter: `tag:${tagSlug}`,
-    include: 'tags,authors',
-  })
-}
-
-// Fetch featured posts
-export async function getFeaturedPosts(
-  limit: number = 6
-): Promise<GhostPost[]> {
-  try {
-    const response = await getPosts({
+    return getPosts({
       limit,
-      filter: 'featured:true',
+      page,
+      filter: `tag:${tagSlug}`,
       include: 'tags,authors',
     })
+  },
+  (tagSlug, options) => `postsByTag:${tagSlug}:${JSON.stringify(options)}`
+)
 
-    return response.posts
-  } catch (error) {
-    console.error('Error fetching featured posts:', error)
-    return []
-  }
-}
+// Fetch featured posts
+export const getFeaturedPosts = createCachedFunction(
+  async function (limit: number = 6): Promise<GhostPost[]> {
+    try {
+      const response = await getPosts({
+        limit,
+        filter: 'featured:true',
+        include: 'tags,authors',
+      })
+
+      return response.posts
+    } catch (error) {
+      console.error('Error fetching featured posts:', error)
+      return []
+    }
+  },
+  (limit) => `featuredPosts:${limit}`
+)
 
 // Fetch all tags
-export async function getTags(): Promise<GhostTag[]> {
-  try {
-    const tags = await api.tags.browse({
-      limit: 'all',
-      include: 'count.posts',
-    })
+export const getTags = createCachedFunction(
+  async function (): Promise<GhostTag[]> {
+    try {
+      const tags = await api.tags.browse({
+        limit: 'all',
+        include: 'count.posts',
+      })
 
-    return tags.filter((tag: GhostTag) => tag.visibility === 'public')
-  } catch (error) {
-    console.error('Error fetching tags:', error)
-    return []
-  }
-}
+      return tags.filter((tag: GhostTag) => tag.visibility === 'public')
+    } catch (error) {
+      console.error('Error fetching tags:', error)
+      return []
+    }
+  },
+  () => 'tags'
+)
 
 // Format post data to ensure consistent types
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -191,5 +234,44 @@ function formatPost(post: any): GhostPost {
     twitter_description: post.twitter_description || null,
   }
 }
+
+// Cache management utilities
+export function clearGhostCache() {
+  cacheStore.clear()
+}
+
+export function getCacheStats() {
+  const now = Date.now()
+  const stats = {
+    totalEntries: cacheStore.size,
+    freshEntries: 0,
+    staleEntries: 0,
+    entries: [] as Array<{ key: string; age: number; isFresh: boolean }>,
+  }
+
+  for (const [key, value] of cacheStore.entries()) {
+    const age = now - value.timestamp
+    const isFresh = age < CACHE_DURATION
+    stats.entries.push({ key, age, isFresh })
+
+    if (isFresh) {
+      stats.freshEntries++
+    } else {
+      stats.staleEntries++
+    }
+  }
+
+  return stats
+}
+
+// Auto-cleanup stale cache entries periodically
+setInterval(() => {
+  const now = Date.now()
+  for (const [key, value] of cacheStore.entries()) {
+    if (now - value.timestamp >= CACHE_DURATION) {
+      cacheStore.delete(key)
+    }
+  }
+}, 60 * 60 * 1000) // Clean up every hour
 
 export default api

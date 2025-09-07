@@ -24,6 +24,17 @@ A responsive portfolio website for Ahmed Soran, a full-stack developer from Kurd
 - **Icons**: Tabler Icons
 - **Package Manager**: Bun
 
+## RTL Support
+
+The portfolio includes automatic RTL (Right-to-Left) text direction detection for blog content. For Ghost CMS integration:
+
+### Ghost Blog RTL Configuration
+
+When writing RTL content in Ghost blog, add in the **Code Injection** section of your Ghost admin panel Post header {{ghost_head}}:
+x-content-dir=rtl
+
+This text will override the default text direction and ensure proper RTL rendering for Arabic, Hebrew, or other right-to-left languages.
+
 ## Getting Started
 
 First, install dependencies:

@@ -147,3 +147,47 @@ body {
 .prose th {
   @apply bg-gray-100 dark:bg-gray-800 font-semibold;
 }
+
+/* Auto RTL Support for Prose - detects direction from content */
+.prose {
+  unicode-bidi: plaintext;
+}
+
+.prose p,
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6,
+.prose li,
+.prose blockquote {
+  unicode-bidi: plaintext !important;
+  text-align: start !important;
+}
+
+.prose blockquote {
+  border-inline-start: 4px solid rgb(59 130 246);
+  padding-inline-start: 1.5rem;
+  border-left: none;
+  padding-left: 0;
+}
+
+.dark .prose blockquote {
+  border-inline-start-color: rgb(96 165 250);
+}
+
+.prose ul,
+.prose ol {
+  padding-inline-start: 1.5rem;
+  padding-left: 0;
+}
+
+.prose table th,
+.prose table td {
+  text-align: start;
+}
+
+.prose .kg-code-card figcaption {
+  text-align: start;
+}

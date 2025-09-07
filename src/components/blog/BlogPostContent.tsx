@@ -14,6 +14,7 @@ import { GhostPost } from '@/lib/ghost'
 
 interface BlogPostContentProps {
   post: GhostPost
+  dir?: string
 }
 
 const containerVariants = {
@@ -38,7 +39,7 @@ const itemVariants = {
   },
 }
 
-export default function BlogPostContent({ post }: BlogPostContentProps) {
+export default function BlogPostContent({ post, dir }: BlogPostContentProps) {
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -66,7 +67,9 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
   }
 
   return (
-    <div className='bg-white dark:bg-gray-900 pt-10 overflow-x-hidden'>
+    <div
+      className='bg-white dark:bg-gray-900 pt-10 overflow-x-hidden'
+      dir={dir}>
       <motion.article
         className='container mx-auto px-6 py-12 max-w-4xl'
         variants={containerVariants}

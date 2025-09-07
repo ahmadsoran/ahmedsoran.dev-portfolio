@@ -66,6 +66,10 @@ export interface GhostPost {
   twitter_image?: string | null
   twitter_title?: string | null
   twitter_description?: string | null
+  codeinjection_head?: string | null
+  codeinjection_foot?: string | null
+  custom_template?: string | null
+  canonical_url?: string | null
 }
 
 export interface GhostTag {

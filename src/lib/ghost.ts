@@ -1,3 +1,4 @@
+import { BlogPostHeaders } from '@/constants/const'
 import GhostContentAPI from '@tryghost/content-api'
 import { cache } from 'react'
 
@@ -70,6 +71,7 @@ export interface GhostPost {
   codeinjection_foot?: string | null
   custom_template?: string | null
   canonical_url?: string | null
+  dir: 'ltr' | 'rtl'
 }
 
 export interface GhostTag {
@@ -149,16 +151,17 @@ export const getPosts = createCachedFunction(
           : searchFilter
       }
 
-      const posts = await api.posts.browse({
+      const postsApi = await api.posts.browse({
         limit,
         page,
         filter: filterString || undefined,
         include,
       })
+      const posts = postsApi?.map((post) => formatPost(post)) || []
 
       return {
-        posts: posts.map(formatPost),
-        meta: posts.meta,
+        posts,
+        meta: postsApi?.meta,
       }
     } catch (error) {
       console.error('Error fetching posts:', error)
@@ -267,6 +270,10 @@ export const getTags = createCachedFunction(
 // Format post data to ensure consistent types
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function formatPost(post: any): GhostPost {
+  const dir =
+    post?.codeinjection_head?.split(BlogPostHeaders.ContentDirection)[1] ||
+    'ltr'
+
   return {
     ...post,
     feature_image_alt: post.feature_image_alt || null,
@@ -280,6 +287,7 @@ function formatPost(post: any): GhostPost {
     twitter_image: post.twitter_image || null,
     twitter_title: post.twitter_title || null,
     twitter_description: post.twitter_description || null,
+    dir,
   }
 }
 

@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import BlogPostContent from '@/components/blog/BlogPostContent'
 import { getPostBySlug, getPosts } from '@/lib/ghost'
-import { BlogPostHeaders } from '@/constants/const'
 
 // Revalidate every 12 hours
 export const revalidate = 43200
@@ -90,15 +89,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   try {
     const { slug } = await params
     const post = await getPostBySlug(slug)
-    const dir =
-      post?.codeinjection_head?.split(BlogPostHeaders.ContentDirection)[1] ||
-      'ltr'
 
     if (!post) {
       notFound()
     }
 
-    return <BlogPostContent post={post} dir={dir} />
+    return <BlogPostContent post={post} />
   } catch (error) {
     console.error('Error loading blog post:', error)
     notFound()

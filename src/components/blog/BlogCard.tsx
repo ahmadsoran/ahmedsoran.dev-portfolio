@@ -25,7 +25,9 @@ export default function BlogCard({ post }: BlogCardProps) {
   }
 
   return (
-    <Link href={`/blog/${post.slug}`}>
+    <Link
+      href={`/blog/${post.slug}`}
+      aria-label={`Read more about ${post.title}`}>
       <div className='group hover:shadow-lg transition-all duration-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden h-full flex flex-col'>
         {/* Image Section */}
         <div className='relative h-48 overflow-hidden'>
@@ -81,14 +83,18 @@ export default function BlogCard({ post }: BlogCardProps) {
               {post.reading_time} min
             </div>
           </div>
-          <h2 className='text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors line-clamp-2'>
+          <h2
+            dir={post.dir}
+            className='text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors line-clamp-2'>
             {post.title}
           </h2>
-          <p className='text-gray-600 dark:text-gray-400 line-clamp-3 mb-4 flex-grow'>
+          <p
+            dir={post.dir}
+            className='text-gray-600 dark:text-gray-400 line-clamp-3 mb-4 flex-grow'>
             {post.custom_excerpt || post.excerpt}
           </p>
           {post.tags && post.tags.length > 0 && (
-            <div className='flex flex-wrap gap-2 mb-4'>
+            <div className='flex flex-wrap gap-2 mb-4' dir={post.dir}>
               {post.tags.slice(0, 2).map((tag) => (
                 <span
                   key={tag.id}

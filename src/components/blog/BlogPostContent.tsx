@@ -14,7 +14,6 @@ import { GhostPost } from '@/lib/ghost'
 
 interface BlogPostContentProps {
   post: GhostPost
-  dir?: string
 }
 
 const containerVariants = {
@@ -39,7 +38,7 @@ const itemVariants = {
   },
 }
 
-export default function BlogPostContent({ post, dir }: BlogPostContentProps) {
+export default function BlogPostContent({ post }: BlogPostContentProps) {
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -67,9 +66,7 @@ export default function BlogPostContent({ post, dir }: BlogPostContentProps) {
   }
 
   return (
-    <div
-      className='bg-white dark:bg-gray-900 pt-10 overflow-x-hidden'
-      dir={dir}>
+    <div className='bg-white dark:bg-gray-900 pt-10 overflow-x-hidden'>
       <motion.article
         className='container mx-auto px-6 py-12 max-w-4xl'
         variants={containerVariants}
@@ -95,13 +92,17 @@ export default function BlogPostContent({ post, dir }: BlogPostContentProps) {
           </div>
 
           {/* Title */}
-          <h1 className='text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight'>
+          <h1
+            className='text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight'
+            dir={post.dir}>
             {post.title}
           </h1>
 
           {/* Excerpt */}
           {(post.custom_excerpt || post.excerpt) && (
-            <p className='text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-8'>
+            <p
+              className='text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-8'
+              dir={post.dir}>
               {post.custom_excerpt || post.excerpt}
             </p>
           )}
@@ -182,11 +183,12 @@ export default function BlogPostContent({ post, dir }: BlogPostContentProps) {
           variants={itemVariants}
           className='prose prose-lg prose-gray dark:prose-invert max-w-none mb-12'
           dangerouslySetInnerHTML={{ __html: post.html }}
+          dir={post.dir}
         />
 
         {/* Tags */}
         {post.tags && post.tags.length > 0 && (
-          <motion.div variants={itemVariants} className='mb-12'>
+          <motion.div variants={itemVariants} className='mb-12' dir={post.dir}>
             <h3 className='text-lg font-semibold text-gray-900 dark:text-white mb-4'>
               Tags
             </h3>

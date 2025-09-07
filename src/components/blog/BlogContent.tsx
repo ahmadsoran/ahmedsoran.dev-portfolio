@@ -361,14 +361,20 @@ export default function BlogContent({
                                 {post.reading_time} min
                               </div>
                             </div>
-                            <h2 className='text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors line-clamp-2'>
+                            <h2
+                              dir={post.dir}
+                              className='text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors line-clamp-2'>
                               {post.title}
                             </h2>
-                            <p className='text-gray-600 dark:text-gray-400 line-clamp-3 mb-4 flex-grow'>
+                            <p
+                              dir={post.dir}
+                              className='text-gray-600 dark:text-gray-400 line-clamp-3 mb-4 flex-grow'>
                               {post.custom_excerpt || post.excerpt}
                             </p>
                             {post.tags && post.tags.length > 0 && (
-                              <div className='flex flex-wrap gap-2 mb-4'>
+                              <div
+                                dir={post.dir}
+                                className='flex flex-wrap gap-2 mb-4'>
                                 {post.tags.slice(0, 2).map((tag) => (
                                   <span
                                     key={tag.id}

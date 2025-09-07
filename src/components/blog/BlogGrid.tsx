@@ -156,18 +156,24 @@ export default function BlogGrid({
                   </div>
 
                   {/* Title */}
-                  <h2 className='text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-200 line-clamp-2'>
+                  <h2
+                    dir={post.dir}
+                    className='text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-200 line-clamp-2'>
                     {post.title}
                   </h2>
 
                   {/* Excerpt */}
-                  <p className='text-muted-foreground mb-4 line-clamp-3'>
+                  <p
+                    dir={post.dir}
+                    className='text-muted-foreground mb-4 line-clamp-3'>
                     {post.custom_excerpt || post.excerpt}
                   </p>
 
                   {/* Tags */}
                   {post.tags && post.tags.length > 0 && (
-                    <div className='flex items-center gap-2 mb-4'>
+                    <div
+                      dir={post.dir}
+                      className='flex items-center gap-2 mb-4'>
                       {post.tags.slice(0, 2).map((tag) => (
                         <Link
                           key={tag.id}

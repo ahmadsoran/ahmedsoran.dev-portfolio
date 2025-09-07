@@ -10,7 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const blogPosts = posts.map((post) => ({
       url: `${siteUrl}/blog/${post.slug}`,
       lastModified: new Date(post.updated_at),
-      changeFrequency: 'weekly' as const,
+      changeFrequency: 'daily' as const,
       priority: 0.7,
     }))
 
@@ -20,42 +20,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 1.0,
-      },
-      {
-        url: `${siteUrl}/#about`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.9,
-      },
-      {
-        url: `${siteUrl}/#skills`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.8,
-      },
-      {
-        url: `${siteUrl}/#projects`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.9,
-      },
-      {
-        url: `${siteUrl}/#experience`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.8,
-      },
-      {
-        url: `${siteUrl}/#courses`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.6,
-      },
-      {
-        url: `${siteUrl}/#contact`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.7,
       },
       {
         url: `${siteUrl}/blog`,
@@ -73,7 +37,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       {
         url: siteUrl,
         lastModified: new Date(),
-        changeFrequency: 'weekly',
+        changeFrequency: 'daily',
         priority: 1,
       },
       {

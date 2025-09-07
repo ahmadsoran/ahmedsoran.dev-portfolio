@@ -126,9 +126,8 @@ export default function Footer() {
             viewport={{ once: true }}
             className='flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm'>
             <p className='text-center md:text-left'>
-              This template is{' '}
-              <span className='font-semibold'>open source</span> and free for
-              anyone to use
+              Source Code is <span className='font-semibold'>open source</span>{' '}
+              and free for anyone to use
               <a
                 href='https://github.com/ahmadsoran/my-portfolio-v4'
                 target='_blank'

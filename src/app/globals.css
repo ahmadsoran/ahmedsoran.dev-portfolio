@@ -73,7 +73,7 @@ body {
 
 /* Table styling for Ghost content */
 .prose table {
-  @apply w-full border-collapse border border-gray-300 dark:border-gray-600 my-6;
+  @apply w-full border-collapse border border-gray-300 dark:border-gray-600 my-6 rounded-lg;
 }
 
 .prose th,
@@ -136,7 +136,7 @@ body {
 
 /* Table styling for better readability */
 .prose table {
-  @apply border-collapse border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden;
+  @apply border-collapse border border-gray-300 dark:border-gray-600 rounded-lg;
 }
 
 .prose th,

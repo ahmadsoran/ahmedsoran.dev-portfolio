@@ -66,7 +66,7 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
   }
 
   return (
-    <div className='bg-white dark:bg-gray-900 pt-10'>
+    <div className='bg-white dark:bg-gray-900 pt-10 overflow-x-hidden'>
       <motion.article
         className='container mx-auto px-6 py-12 max-w-4xl'
         variants={containerVariants}

@@ -1,0 +1,22 @@
+# Blog-specific robots.txt directives
+User-agent: *
+Allow: /blog
+Allow: /blog/
+Allow: /blog/*
+
+# Allow all search engines to crawl blog content
+User-agent: Googlebot
+Allow: /blog
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /blog
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /blog
+Crawl-delay: 1
+
+# Additional sitemap references
+Sitemap: https://ahmedsoran.dev/sitemap.xml
+Sitemap: https://ahmedsoran.dev/rss.xml

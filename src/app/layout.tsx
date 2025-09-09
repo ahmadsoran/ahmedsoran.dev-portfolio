@@ -204,6 +204,8 @@ export default function RootLayout({
           href='https://fonts.gstatic.com'
           crossOrigin='anonymous'
         />
+        <link rel='preconnect' href='https://ahmed-soran.ghost.io' />
+        <link rel='preconnect' href='https://static.ghost.org' />
 
         <link
           rel='apple-touch-icon'

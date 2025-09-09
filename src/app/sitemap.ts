@@ -10,12 +10,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       getTags(),
     ])
 
+    // Get the latest post date for blog page lastModified
+    const latestPostDate =
+      posts.length > 0
+        ? new Date(
+            Math.max(
+              ...posts.map((post) => new Date(post.updated_at).getTime())
+            )
+          )
+        : new Date()
+
     // Individual blog posts
     const blogPosts = posts.map((post) => ({
       url: `${siteUrl}/blog/${post.slug}`,
       lastModified: new Date(post.updated_at),
       changeFrequency: 'weekly' as const,
-      priority: 0.7,
+      priority: 0.8, // Higher priority for individual posts
     }))
 
     // Tag pages (only for tags with posts)
@@ -23,9 +33,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .filter((tag) => tag.count?.posts && tag.count.posts > 0)
       .map((tag) => ({
         url: `${siteUrl}/blog?tag=${tag.slug}`,
-        lastModified: new Date(),
+        lastModified: latestPostDate,
         changeFrequency: 'weekly' as const,
-        priority: 0.6,
+        priority: 0.7,
       }))
 
     // Blog pagination pages (if there are multiple pages)
@@ -34,9 +44,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       for (let page = 2; page <= meta.pagination.pages; page++) {
         paginationPages.push({
           url: `${siteUrl}/blog?page=${page}`,
-          lastModified: new Date(),
+          lastModified: latestPostDate,
           changeFrequency: 'daily' as const,
-          priority: 0.5,
+          priority: Math.max(0.5 - (page - 2) * 0.1, 0.3), // Decreasing priority for later pages
         })
       }
     }
@@ -50,9 +60,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       },
       {
         url: `${siteUrl}/blog`,
-        lastModified: new Date(),
+        lastModified: latestPostDate,
         changeFrequency: 'daily',
-        priority: 0.8,
+        priority: 0.9, // High priority for main blog page
       },
       ...blogPosts,
       ...tagPages,
@@ -73,7 +83,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         url: `${siteUrl}/blog`,
         lastModified: new Date(),
         changeFrequency: 'daily',
-        priority: 0.8,
+        priority: 0.9,
       },
     ]
   }

@@ -2,9 +2,18 @@
 User-agent: *
 Allow: /
 
+# Specific blog directives
+Allow: /blog
+Allow: /blog/
+Allow: /blog/*
+
 # Host
 Host: https://ahmedsoran.dev
 
 # Sitemaps
 Sitemap: https://ahmedsoran.dev/sitemap.xml
-Sitemap: https://ahmedsoran.dev/server-sitemap.xml
+Sitemap: https://ahmedsoran.dev/blog/sitemap.xml
+Sitemap: https://ahmedsoran.dev/rss.xml
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1

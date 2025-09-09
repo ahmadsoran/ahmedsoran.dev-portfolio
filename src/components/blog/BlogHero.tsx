@@ -52,7 +52,7 @@ export default function BlogHero({ searchParams }: BlogHeroProps) {
   }
 
   return (
-    <section className='relative min-h-dvh py-5 flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-stone-50 dark:from-gray-900 dark:via-gray-800 dark:to-slate-900'>
+    <section className='relative min-h-lvh py-5 flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-stone-50 dark:from-gray-900 dark:via-gray-800 dark:to-slate-900'>
       {/* Animated Background Elements */}
       <div className='absolute inset-0 overflow-hidden'>
         <motion.div

@@ -23,7 +23,7 @@ export default async function Home() {
   }
 
   return (
-    <main className='min-h-dvh'>
+    <main className='min-h-lvh'>
       <HeroSection />
       <SkillsSection />
       <ProjectsSection />

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { Button } from '@heroui/react'
 import {
   IconArrowDown,
@@ -10,6 +10,7 @@ import {
   IconSparkles,
 } from '@tabler/icons-react'
 import data from '@/constants/data.json'
+import { useRef } from 'react'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -34,30 +35,58 @@ const itemVariants = {
 }
 
 export default function HeroSection() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const inView = useInView(containerRef)
+  console.log({ inView })
   return (
     <section
       id='about'
+      ref={containerRef}
       className='pt-[80px] pb-5 relative min-h-lvh flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-stone-50 dark:from-gray-900 dark:via-gray-800 dark:to-slate-900'>
       {/* Animated Background Elements */}
       <div className='absolute inset-0 overflow-hidden'>
         <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          animate={
+            inView
+              ? { scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }
+              : { scale: 1, opacity: 0.5 }
+          }
+          transition={{ duration: 2, repeat: inView ? Infinity : 0 }}
           className='absolute top-20 left-10 w-2 h-2 bg-gray-400 rounded-full'
         />
         <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+          animate={
+            inView
+              ? { scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }
+              : { scale: 1, opacity: 0.5 }
+          }
+          transition={{
+            duration: 2,
+            repeat: inView ? Infinity : 0,
+            delay: 0.5,
+          }}
           className='absolute top-40 right-20 w-3 h-3 bg-slate-400 rounded-full'
         />
         <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+          animate={
+            inView
+              ? { scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }
+              : { scale: 1, opacity: 0.5 }
+          }
+          transition={{ duration: 2, repeat: inView ? Infinity : 0, delay: 1 }}
           className='absolute bottom-40 left-20 w-2 h-2 bg-gray-500 rounded-full'
         />
         <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
+          animate={
+            inView
+              ? { scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }
+              : { scale: 1, opacity: 0.5 }
+          }
+          transition={{
+            duration: 2,
+            repeat: inView ? Infinity : 0,
+            delay: 1.5,
+          }}
           className='absolute bottom-20 right-10 w-4 h-4 bg-stone-400 rounded-full'
         />
 
@@ -69,7 +98,7 @@ export default function HeroSection() {
         <motion.div
           variants={containerVariants}
           initial='hidden'
-          animate='visible'
+          animate={'visible'}
           className='text-center space-y-12'>
           {/* Main Content */}
           <div className='space-y-8'>
@@ -160,15 +189,19 @@ export default function HeroSection() {
       </div>
       {/* Floating Scroll Indicator - Moved outside main content */}
       <motion.div
-        animate={{ y: [-5, 5, -5], rotate: [0, 2, -2, 0] }}
-        transition={{ duration: 4, repeat: Infinity }}
+        animate={
+          inView
+            ? { y: [-5, 5, -5], rotate: [0, 2, -2, 0] }
+            : { y: 0, rotate: 0 }
+        }
+        transition={{ duration: 4, repeat: inView ? Infinity : 0 }}
         className='flex flex-col items-center space-y-2 mt-10'>
         <span className='text-sm text-gray-500 dark:text-gray-400 font-medium'>
           Scroll to explore
         </span>
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          animate={inView ? { y: [0, 8, 0] } : { y: 0 }}
+          transition={{ duration: 2, repeat: inView ? Infinity : 0 }}
           className='p-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg border border-gray-200/50 dark:border-gray-700/50'>
           <IconArrowDown
             size={16}
